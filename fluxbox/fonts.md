@@ -1,0 +1,49 @@
+## Font simple configurations
+
+>  nano /etc/fonts/local.conf
+
+```
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+ <match target="pattern">
+  <edit name="dpi" mode="assign">96</edit>
+ </match>
+ <match target="font">
+  <edit mode="assign" name="antialias" >
+  <bool>true</bool>
+  </edit>
+ </match>
+ <match target="font">
+  <edit mode="assign" name="hinting" >
+  <bool>true</bool>
+  </edit>
+ </match>
+ <match target="font">
+  <edit mode="assign" name="hintstyle" >
+  <const>hintslight</const>
+  </edit>
+ </match>
+ <match target="font">
+  <edit mode="assign" name="rgba" >
+  <const>rgb</const>
+  </edit>
+ </match>
+ <match target="font">
+  <edit mode="assign" name="lcdfilter">
+  <const>lcddefault</const>
+  </edit>
+ </match>
+ </fontconfig>
+```
+
+> nano .Xresources
+
+```
+Xft.lcdfilter:  lcddefault
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+```
